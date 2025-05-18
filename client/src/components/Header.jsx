@@ -1,5 +1,6 @@
 import { Heading, HStack } from "@chakra-ui/react";
-
+import  SearchInput  from "../components/SearchInput";
+import {Link} from "react-router-dom"
 import { SongRiverLogo } from "./SongRiverLogo";
 
 export function Header() {
@@ -14,9 +15,12 @@ export function Header() {
       w="100vw"
     >
       <SongRiverLogo size="5xl" />
-      <Heading as="h1" size="lg">
+      <Link to="/">
+        <Heading as="h1" size="lg">
         Employee&nbsp;&nbsp;Directory
-      </Heading>
+        </Heading>
+      </Link>
+      <SearchInput/>
     </HStack>
   );
 }

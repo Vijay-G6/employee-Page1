@@ -2,8 +2,9 @@ import { useQuery } from "@tanstack/react-query";
 import { useParams } from "react-router-dom"  
 import {Heading, HStack, Image, Text, VStack} from "@chakra-ui/react"
 
-export function Employee () {
+const Employee =() => {
     const { id } = useParams()
+    console.log(id)
     const { isLoading, data } = useQuery(["employee", id], async () => {
         const response = await fetch(`http://localhost:3030/employees/${id}`)
         return response.json()
@@ -13,9 +14,11 @@ export function Employee () {
     //  <h1>Employee Data</h1>
     //   )
 
-    if (isLoading) return <Text>Loading...</Text>;
-      
+    if (isLoading) return <p>Loading...</p>;
+    
+    console.log("Employees Data", data)
     return (
+      <>
       <HStack spacing={10} alignItems="center" justifyContent="center">
         <Image
           boxSize="175px"
@@ -39,5 +42,7 @@ export function Employee () {
           </VStack>
           <Text color="white" />
         </HStack>
+      </>
       );
 }
+export default Employee;
