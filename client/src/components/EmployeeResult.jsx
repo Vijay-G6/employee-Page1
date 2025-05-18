@@ -1,6 +1,8 @@
 import { HStack, Image, Text, VStack } from "@chakra-ui/react";
 import { Link} from "react-router-dom"
 import useSearchTerm from "../hooks/useSearchTerm"
+
+
 const EmployeeResult = ({ employee }) => {
   const [searchTerm] = useSearchTerm();
 

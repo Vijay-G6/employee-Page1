@@ -14,7 +14,7 @@ const Employee =() => {
     //  <h1>Employee Data</h1>
     //   )
 
-    if (isLoading) return <p>Loading...</p>;
+    if (isLoading) return null;
     
     console.log("Employees Data", data)
     return (
