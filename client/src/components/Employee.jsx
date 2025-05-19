@@ -1,6 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
 import { useParams } from "react-router-dom"  
 import {Heading, HStack, Image, Text, VStack} from "@chakra-ui/react"
+import { Badges } from "./Badges"
 
 const Employee =() => {
     const { id } = useParams()
@@ -42,7 +43,8 @@ const Employee =() => {
           </VStack>
           <Text color="white" />
         </HStack>
+        <Badges employee ={data}/>
       </>
-      );
+    );
 }
 export default Employee;

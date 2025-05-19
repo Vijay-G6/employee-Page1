@@ -16,6 +16,7 @@ export function Loading() {
       alignItems="center"
       justifyContent="center"
     >
+    <Center pos="fixed" width="100vw" height="100vh" zIndex={-100}>
       <Spinner
         size="xl"
         thickness="4px"
@@ -23,6 +24,7 @@ export function Loading() {
         color="blue.500"
         emptyColor="gray.200"
       />
+    </Center>
     </Box>
    /* <Spinner
       aria-label="loading"
