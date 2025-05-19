@@ -5,7 +5,7 @@ import {Heading, HStack, Image, Text, VStack} from "@chakra-ui/react"
 const Employee =() => {
     const { id } = useParams()
     console.log(id)
-    const { isLoading, data } = useQuery(["employee", id], async () => {
+    const { isError, isLoading, data } = useQuery(["employee", id], async () => {
         const response = await fetch(`http://localhost:3030/employees/${id}`)
         return response.json()
     })
@@ -14,7 +14,7 @@ const Employee =() => {
     //  <h1>Employee Data</h1>
     //   )
 
-    if (isLoading) return null;
+    if (isLoading || isError) return null;
     
     console.log("Employees Data", data)
     return (

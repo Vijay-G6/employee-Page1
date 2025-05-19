@@ -6,10 +6,11 @@ import { BrowserRouter } from "react-router-dom";
 
 import App from "./App";
 import theme from "./theme";
+import { queryClient } from "./query-client"
 
 //client for react-Query
 
-const queryClient = new QueryClient();
+//const queryClient = new QueryClient();
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
